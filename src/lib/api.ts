@@ -1,5 +1,6 @@
 // lib/api.ts
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+const envApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = envApiUrl.endsWith("/api") ? envApiUrl : `${envApiUrl}/api`;
 
 export async function uploadCV(file: File) {
   const formData = new FormData();
