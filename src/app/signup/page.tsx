@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FileText, ArrowRight, Shield, Zap, Users } from 'lucide-react';
+import { signIn } from 'next-auth/react';
 
 export default function SignupPage() {
   const [name, setName] = useState('');
@@ -122,6 +123,20 @@ export default function SignupPage() {
               Get Started <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>
+
+          <div className="relative my-6 text-center">
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 border-t border-slate-800" />
+            <span className="relative px-4 bg-slate-900/50 text-xs text-slate-500 uppercase tracking-widest">Or sign up with</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
+            className="w-full flex items-center justify-center gap-3 py-3 bg-slate-950 border border-slate-800 rounded-xl hover:bg-slate-900 transition-all text-sm font-medium"
+          >
+            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" className="w-4 h-4" />
+            Continue with Google
+          </button>
 
           <p className="text-center mt-8 text-sm text-slate-400">
             Already have an account? <Link href="/login" className="text-blue-400 hover:text-blue-300 font-medium transition-colors">Sign In</Link>

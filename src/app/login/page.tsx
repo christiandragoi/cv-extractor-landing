@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FileText, ArrowRight, Github } from 'lucide-react';
+import { signIn } from 'next-auth/react';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -76,11 +77,19 @@ export default function LoginPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <button className="flex items-center justify-center gap-2 py-3 bg-slate-950 border border-slate-800 rounded-xl hover:bg-slate-900 transition-all text-sm font-medium">
+          <button
+            type="button"
+            onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
+            className="flex items-center justify-center gap-2 py-3 bg-slate-950 border border-slate-800 rounded-xl hover:bg-slate-900 transition-all text-sm font-medium"
+          >
             <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google" className="w-4 h-4" />
             Google
           </button>
-          <button className="flex items-center justify-center gap-2 py-3 bg-slate-950 border border-slate-800 rounded-xl hover:bg-slate-900 transition-all text-sm font-medium">
+          <button
+            type="button"
+            onClick={() => signIn('github', { callbackUrl: '/dashboard' })}
+            className="flex items-center justify-center gap-2 py-3 bg-slate-950 border border-slate-800 rounded-xl hover:bg-slate-900 transition-all text-sm font-medium"
+          >
             <Github className="w-4 h-4" />
             GitHub
           </button>
