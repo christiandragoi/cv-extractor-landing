@@ -39,15 +39,15 @@ function Navigation() {
         <div className="hidden md:flex items-center gap-8 text-sm text-slate-400">
           <a href="#features" className="hover:text-white transition-colors">Features</a>
           <a href="#workflow" className="hover:text-white transition-colors">Workflow</a>
-          <Link href="/login" className="hover:text-white transition-colors">Sign In</Link>
-          <Link href="/signup" className="hover:text-white transition-colors px-4 py-2 border border-slate-700 rounded-lg hover:border-blue-500 transition-all">Sign Up</Link>
+          <a href="http://localhost:8501" className="hover:text-white transition-colors">Sign In</a>
+          <a href="http://localhost:8501" className="hover:text-white transition-colors px-4 py-2 border border-slate-700 rounded-lg hover:border-blue-500 transition-all">Sign Up</a>
         </div>
 
         {/* React Bits added: MagneticButton wraps Deploy */}
         <MagneticButton strength={40}>
-          <Link href="/signup" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-all flex items-center gap-2">
-            Deploy <ChevronRight className="w-4 h-4" />
-          </Link>
+          <a href="http://localhost:8501" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-all flex items-center gap-2">
+            Get Started <ChevronRight className="w-4 h-4" />
+          </a>
         </MagneticButton>
       </div>
     </nav>
@@ -100,10 +100,11 @@ function HeroSection() {
             transition={{ delay: 0.3 }}
             className="flex flex-wrap gap-4"
           >
-            {/* React Bits added: ShinyButton wraps Start Processing */}
-            <ShinyButton className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-blue-600/25">
-              Start Processing <Zap className="w-5 h-5" />
-            </ShinyButton>
+            <a href="http://localhost:8501">
+              <ShinyButton className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-blue-600/25">
+                Start Processing <Zap className="w-5 h-5" />
+              </ShinyButton>
+            </a>
             <button className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all border border-slate-700">
               View Documentation
             </button>
@@ -163,10 +164,11 @@ function HeroSection() {
                 </div>
               </div>
               
-              {/* React Bits added: ShinyButton wraps Process CV */}
-              <ShinyButton className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all">
-                <Zap className="w-4 h-4" /> Process CV
-              </ShinyButton>
+              <a href="http://localhost:8501" className="w-full">
+                <ShinyButton className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all">
+                  <Zap className="w-4 h-4" /> Process CV
+                </ShinyButton>
+              </a>
             </div>
           </SpotlightCard>
           
@@ -466,15 +468,14 @@ function CTASection() {
           Join recruitment agencies saving 20+ hours per week on candidate data entry.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          {/* React Bits added: ShinyButton wraps Deploy Now CTA */}
-          <Link href="/signup">
+          <a href="http://localhost:8501">
             <ShinyButton className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/25 cta-pulse">
-              Deploy Now
+              Launch Local App
             </ShinyButton>
-          </Link>
-          <Link href="/login" className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all border border-slate-700">
+          </a>
+          <a href="http://localhost:8501" className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all border border-slate-700">
             Sign In
-          </Link>
+          </a>
         </div>
       </div>
     </section>

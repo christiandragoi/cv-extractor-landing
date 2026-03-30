@@ -12,8 +12,9 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, redirect to the Streamlit app after "login"
-    window.location.href = "http://localhost:8501";
+    // Redirect to the production Streamlit app
+    const targetUrl = process.env.NEXT_PUBLIC_API_URL || "https://app.cvextractor.app";
+    window.location.href = targetUrl;
   };
 
   return (
